@@ -1,0 +1,34 @@
+base: 
+  # Dataset Config
+  dataset: "cholec80"
+  num_class: 7
+  data_dir: "./cholec80/data/"
+  label_dir: "./cholec80/label/"
+
+  # Device Config
+  gpus: [0,1,2]
+  num_workers: 32
+  batch_size: 48
+
+  # Train / Query / Database Split Config
+  train_index: [0, 1, 2, 3, 5, 6, 8, 9, 13, 17, 19, 21, 22, 23, 24, 26, 27, 29, 30, 31, 36, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 54, 55, 58, 59, 65, 67, 70, 71, 72, 74, 75, 76, 79]
+  query_index: [12, 15, 18, 32, 34, 52, 62, 64, 73, 78]
+  database_index: [4, 7, 10, 11, 14, 16, 20, 25, 28, 33, 35, 37, 53, 56, 57, 60, 61, 63, 66, 68, 69, 77]
+
+  # Model Config
+  code_length: 256
+  n_frame: 20
+  duration: 20
+train: 
+  epochs: 150
+  warmup_epochs: 5
+  lr: 1.0e-4
+  min_lr: 1.0e-6
+  weight_decay: 1.0e-5
+  optim: adamw
+  scheduler_gamma: 0.98
+  print_freq: 20
+  save_freq: 5
+  checkpoint: ~
+test:
+  model_path: "./data/model/cholec80_150.pth"
