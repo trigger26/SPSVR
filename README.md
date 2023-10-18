@@ -68,3 +68,17 @@ python generate.py --cfg config/<dataset>.yaml
 ```
 
 You can modify the `model_path` entry in `config/<dataset>.yaml` to load the pre-trained model weights.
+
+## Citation
+
+If you find this repository useful in your research, please cite our paper:
+
+```text
+@article{yang2023semantic,
+  title={Semantic-Preserving Surgical Video Retrieval with Phase and Behavior Coordinated Hashing},
+  author={Yang, Yuxuan and Wang, Hao and Wang, Jizhou and Dong, Kai and Ding, Shuai},
+  journal={IEEE Transactions on Medical Imaging},
+  year={2023},
+  publisher={IEEE}
+}
+```
